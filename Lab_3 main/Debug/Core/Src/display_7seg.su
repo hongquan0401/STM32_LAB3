@@ -1,0 +1,3 @@
+display_7seg.c:14:6:update_buffer	4	static
+display_7seg.c:21:6:display	16	static
+display_7seg.c:120:6:scanled	16	static
