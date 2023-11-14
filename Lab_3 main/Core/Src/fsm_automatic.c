@@ -33,6 +33,11 @@ void fsm_automatic1_run(){
 				counter1 = green_time/100 - 1;
 				setTimer3(duration);
 			}
+			//
+			if (isButton1Pressed() == 1){
+				status1 = MAN_RED;
+				setTimer1(500);
+			}
 			break;
 		case AUTO_GREEN:
 			light1(GREEN); // green 1 on
@@ -48,6 +53,11 @@ void fsm_automatic1_run(){
 				counter1 = yellow_time/100 - 1;
 				setTimer3(duration);
 			}
+			//
+			if (isButton1Pressed() == 1){
+				status1 = MAN_RED;
+				setTimer1(500);
+			}
 			break;
 		case AUTO_YELLOW:
 			light1(YELLOW); // yellow 1 on
@@ -62,6 +72,11 @@ void fsm_automatic1_run(){
 				setTimer1(red_time);
 				counter1 = red_time/100 - 1;
 				setTimer3(duration);
+			}
+			//
+			if (isButton1Pressed() == 1){
+				status1 = MAN_RED;
+				setTimer1(500);
 			}
 			break;
 		default:

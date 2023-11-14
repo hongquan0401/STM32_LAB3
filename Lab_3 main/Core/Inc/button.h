@@ -15,6 +15,11 @@
 
 extern int button1_flag, button2_flag, button3_flag;
 
-void getKeyInput();
+int isButton1Pressed();
+int isButton2Pressed();
+int isButton3Pressed();
+void getKeyInput1();
+void getKeyInput2();
+void getKeyInput3();
 
 #endif /* INC_BUTTON_H_ */

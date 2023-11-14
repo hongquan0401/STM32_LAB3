@@ -8,9 +8,6 @@
 #include "display_7seg.h"
 #include "main.h"
 
-int led_buffer[4] = {0, 0, 0, 0};
-int cycle = 10;
-
 void update_buffer(){
 	led_buffer[0] = counter1/10;
 	led_buffer[1] = counter1%10;
@@ -19,7 +16,6 @@ void update_buffer(){
 }
 
 void display(int value){
-	update_buffer();
 	switch (value) {
 		case 1:
 			HAL_GPIO_WritePin(Led_A_GPIO_Port, Led_A_Pin, SET);
@@ -118,24 +114,32 @@ void display(int value){
 }
 
 void scanled(int idx){
-	HAL_GPIO_WritePin(en0_GPIO_Port, en0_Pin, SET);
-	HAL_GPIO_WritePin(en1_GPIO_Port, en1_Pin, SET);
-	HAL_GPIO_WritePin(en2_GPIO_Port, en2_Pin, SET);
-	HAL_GPIO_WritePin(en3_GPIO_Port, en3_Pin, SET);
 	switch (idx) {
 		case 0:
 			HAL_GPIO_WritePin(en0_GPIO_Port, en0_Pin, RESET);
+			HAL_GPIO_WritePin(en1_GPIO_Port, en1_Pin, SET);
+			HAL_GPIO_WritePin(en2_GPIO_Port, en2_Pin, SET);
+			HAL_GPIO_WritePin(en3_GPIO_Port, en3_Pin, SET);
 			display(led_buffer[0]);
 			break;
 		case 1:
+			HAL_GPIO_WritePin(en0_GPIO_Port, en0_Pin, SET);
 			HAL_GPIO_WritePin(en1_GPIO_Port, en1_Pin, RESET);
+			HAL_GPIO_WritePin(en2_GPIO_Port, en2_Pin, SET);
+			HAL_GPIO_WritePin(en3_GPIO_Port, en3_Pin, SET);
 			display(led_buffer[1]);
 			break;
 		case 2:
+			HAL_GPIO_WritePin(en0_GPIO_Port, en0_Pin, SET);
+			HAL_GPIO_WritePin(en1_GPIO_Port, en1_Pin, SET);
 			HAL_GPIO_WritePin(en2_GPIO_Port, en2_Pin, RESET);
+			HAL_GPIO_WritePin(en3_GPIO_Port, en3_Pin, SET);
 			display(led_buffer[2]);
 			break;
 		case 3:
+			HAL_GPIO_WritePin(en0_GPIO_Port, en0_Pin, SET);
+			HAL_GPIO_WritePin(en1_GPIO_Port, en1_Pin, SET);
+			HAL_GPIO_WritePin(en2_GPIO_Port, en2_Pin, SET);
 			HAL_GPIO_WritePin(en3_GPIO_Port, en3_Pin, RESET);
 			display(led_buffer[3]);
 			break;

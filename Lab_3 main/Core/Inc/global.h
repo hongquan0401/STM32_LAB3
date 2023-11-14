@@ -27,5 +27,6 @@ extern int status1, status2;
 extern int red_time, green_time, yellow_time;
 extern int duration;
 extern int counter1, counter2;
+extern int led_buffer[4];
 
 #endif /* INC_GLOBAL_H_ */

@@ -12,5 +12,5 @@
 
 void display(int value);
 void scanled(int idx);
-
+void update_buffer();
 #endif /* INC_DISPLAY_7SEG_H_ */

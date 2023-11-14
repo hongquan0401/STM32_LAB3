@@ -109,6 +109,7 @@ int main(void)
     /* USER CODE END WHILE */
 	  fsm_automatic1_run();
 	  fsm_automatic2_run();
+	  fsm_manual_run();
 	  if (timer4_flag == 1){
 		  setTimer4(10);
 		  if (led_idx >= 4) led_idx = 0;
@@ -258,6 +259,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timer3Run();
 	timer4Run();
 	timer5Run();
+	getKeyInput1();
+	getKeyInput2();
+	getKeyInput3();
+	update_buffer();
 }
 /* USER CODE END 4 */
 
