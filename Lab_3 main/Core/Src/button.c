@@ -14,7 +14,7 @@ int KeyReg0 = NORMAL_STATE,
 	KeyReg2 = NORMAL_STATE;
 
 int KeyReg3 = NORMAL_STATE;
-int TimerForKeyPress = 200;
+int TimerForKeyPress1 = 200;
 
 int isButton1Pressed(){
 	if (button1_flag == 1){
@@ -34,16 +34,16 @@ void getKeyInput1(){
 			if (KeyReg2 == PRESSED_STATE){                    // XU LY NHAN THA
 				//TODO
 				button1_flag = 1;
-				TimerForKeyPress = 200;
+				TimerForKeyPress1 = 200;
 			}
 		}
 		else {                                               // XU LY NHAN DE
-			TimerForKeyPress--;
-			if (TimerForKeyPress == 0){
+			TimerForKeyPress1--;
+			if (TimerForKeyPress1 == 0){
 				if (KeyReg2 == PRESSED_STATE){
 					//TODO
 				}
-				TimerForKeyPress = 200;
+				TimerForKeyPress1 = 200;
 			}
 		}
 	}
@@ -56,6 +56,7 @@ int KeyReg10 = NORMAL_STATE,
 	KeyReg12 = NORMAL_STATE;
 
 int KeyReg13 = NORMAL_STATE;
+int TimerForKeyPress2 = 200;
 
 int isButton2Pressed(){
 	if (button2_flag == 1){
@@ -75,16 +76,16 @@ void getKeyInput2(){
 			if (KeyReg12 == PRESSED_STATE){                    // XU LY NHAN THA
 				//TODO
 				button2_flag = 1;
-				TimerForKeyPress = 200;
+				TimerForKeyPress2 = 200;
 			}
 		}
 		else {                                               // XU LY NHAN DE
-			TimerForKeyPress--;
-			if (TimerForKeyPress == 0){
+			TimerForKeyPress2--;
+			if (TimerForKeyPress2 == 0){
 				if (KeyReg12 == PRESSED_STATE){
 					//TODO
 				}
-				TimerForKeyPress = 200;
+				TimerForKeyPress2 = 200;
 			}
 		}
 	}
@@ -97,6 +98,7 @@ int KeyReg20 = NORMAL_STATE,
 	KeyReg22 = NORMAL_STATE;
 
 int KeyReg23 = NORMAL_STATE;
+int TimerForKeyPress3 = 200;
 
 int isButton3Pressed(){
 	if (button3_flag == 1){
@@ -116,16 +118,16 @@ void getKeyInput3(){
 			if (KeyReg22 == PRESSED_STATE){                    // XU LY NHAN THA
 				//TODO
 				button3_flag = 1;
-				TimerForKeyPress = 200;
+				TimerForKeyPress3 = 200;
 			}
 		}
 		else {                                               // XU LY NHAN DE
-			TimerForKeyPress--;
-			if (TimerForKeyPress == 0){
+			TimerForKeyPress3--;
+			if (TimerForKeyPress3 == 0){
 				if (KeyReg22 == PRESSED_STATE){
 					//TODO
 				}
-				TimerForKeyPress = 200;
+				TimerForKeyPress3 = 200;
 			}
 		}
 	}

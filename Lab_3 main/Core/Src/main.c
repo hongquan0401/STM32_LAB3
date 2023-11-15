@@ -104,17 +104,26 @@ int main(void)
   HAL_GPIO_WritePin(en2_GPIO_Port, en2_Pin, SET);
   HAL_GPIO_WritePin(en3_GPIO_Port, en3_Pin, SET);
   setTimer4(10);
+  HAL_GPIO_WritePin(LED_Test_GPIO_Port, LED_Test_Pin, SET);
   while (1)
   {
     /* USER CODE END WHILE */
 	  fsm_automatic1_run();
 	  fsm_automatic2_run();
 	  fsm_manual_run();
+//	  if (isButton2Pressed() == 1){
+//		  HAL_GPIO_TogglePin(LED_Test_GPIO_Port, LED_Test_Pin);
+//		  isButton2Pressed();
+//	  }
+//	  if (isButton3Pressed() == 1){
+//	  		  HAL_GPIO_TogglePin(LED_Test_GPIO_Port, LED_Test_Pin);
+//	  		  isButton3Pressed();
+//	  	  }
 	  if (timer4_flag == 1){
 		  setTimer4(10);
 		  if (led_idx >= 4) led_idx = 0;
-		  scanled(led_idx);
-		  led_idx++;
+		  	  scanled(led_idx);
+		  	  led_idx++;
 	  }
     /* USER CODE BEGIN 3 */
   }
@@ -218,7 +227,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, en0_Pin|en1_Pin|en2_Pin|en3_Pin
                           |LED_RED1_Pin|LED_YEL1_Pin|LED_GRE1_Pin|LED_RED2_Pin
-                          |LED_YEL2_Pin|LED_GRE2_Pin, GPIO_PIN_RESET);
+                          |LED_YEL2_Pin|LED_GRE2_Pin|LED_Test_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, Led_A_Pin|Led_B_Pin|Led_C_Pin|Led_D_Pin
@@ -232,10 +241,10 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : en0_Pin en1_Pin en2_Pin en3_Pin
                            LED_RED1_Pin LED_YEL1_Pin LED_GRE1_Pin LED_RED2_Pin
-                           LED_YEL2_Pin LED_GRE2_Pin */
+                           LED_YEL2_Pin LED_GRE2_Pin LED_Test_Pin */
   GPIO_InitStruct.Pin = en0_Pin|en1_Pin|en2_Pin|en3_Pin
                           |LED_RED1_Pin|LED_YEL1_Pin|LED_GRE1_Pin|LED_RED2_Pin
-                          |LED_YEL2_Pin|LED_GRE2_Pin;
+                          |LED_YEL2_Pin|LED_GRE2_Pin|LED_Test_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

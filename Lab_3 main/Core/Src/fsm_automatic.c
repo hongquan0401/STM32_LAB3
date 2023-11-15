@@ -32,6 +32,9 @@ void fsm_automatic1_run(){
 				setTimer1(green_time);
 				counter1 = green_time/100 - 1;
 				setTimer3(duration);
+				isButton1Pressed();
+				isButton2Pressed();
+				isButton3Pressed();
 			}
 			//
 			if (isButton1Pressed() == 1){
@@ -52,6 +55,9 @@ void fsm_automatic1_run(){
 				setTimer1(yellow_time);
 				counter1 = yellow_time/100 - 1;
 				setTimer3(duration);
+				isButton1Pressed();
+				isButton2Pressed();
+				isButton3Pressed();
 			}
 			//
 			if (isButton1Pressed() == 1){
@@ -72,6 +78,9 @@ void fsm_automatic1_run(){
 				setTimer1(red_time);
 				counter1 = red_time/100 - 1;
 				setTimer3(duration);
+				isButton1Pressed();
+				isButton2Pressed();
+				isButton3Pressed();
 			}
 			//
 			if (isButton1Pressed() == 1){

@@ -90,6 +90,8 @@ void Error_Handler(void);
 #define LED_YEL2_GPIO_Port GPIOA
 #define LED_GRE2_Pin GPIO_PIN_10
 #define LED_GRE2_GPIO_Port GPIOA
+#define LED_Test_Pin GPIO_PIN_13
+#define LED_Test_GPIO_Port GPIOA
 #define Led_D_Pin GPIO_PIN_3
 #define Led_D_GPIO_Port GPIOB
 #define Led_E_Pin GPIO_PIN_4
